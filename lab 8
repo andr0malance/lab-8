@@ -12,17 +12,24 @@ namespace lab8
         {
             try
             {
-                Console.WriteLine("X:");
-                //Вводим значение для X
+                Console.WriteLine("x:");
+                //Вводим значение для x
                 int x = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Y:");
-                //Вводим значение для Y
+                if (x == 0)
+                {
+                    Console.WriteLine("z будет равно 0");
+                }
+                Console.WriteLine("y:");
+                //Вводим значение для y
                 int y = Convert.ToInt32(Console.ReadLine());
+                if (y == 0)
+                {
+                    Console.WriteLine("исключение");
+                }
                 double z = x / y;
             }
             catch
             {
-                Console.WriteLine("ИСКЛЮЧЕНИЕ");
                 Console.ReadLine();
             }
 
