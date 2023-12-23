@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,34 +11,30 @@ namespace lab_8
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("x:");
-            //Вводим переменную x
-            int x = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("y:");
-            //Вводим перемнную y
-            int y = Convert.ToInt32(Console.ReadLine());
-            try
-            {
-                int z = x / y;
-                Console.WriteLine(z);
-            }
-            catch
-            {
-                Console.WriteLine("исключение");
-            }
+            Console.WriteLine("Введите x");
+            int x = Convert.ToInt32(Console.ReadLine()); //Вводим значение для переменной x
+            Console.WriteLine("Введите y");
+            int y = Convert.ToInt32(Console.ReadLine()); //Вводим значение для переменной y
             try
             {
                 int z = x / y;
                 if (x == 0)
                 {
-                    throw new Exception("z будет равно 0");
+                    throw new Exception("Z равно 0");
+                }
+                else
+                {
+                    Console.WriteLine($"Ответ {z}");
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) when (y == 0)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Исключение {ex.Message}");
             }
-            Console.ReadLine();
+            catch (Exception ex1)
+            {
+                Console.WriteLine(ex1.Message);
+            }
         }
     }
 }
